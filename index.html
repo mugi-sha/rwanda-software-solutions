@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Software Solutions - Rwanda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .contact-bar {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-bar h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item span {
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-card h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+        
+        .product-card .badge {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .features {
+            margin: 20px 0;
+        }
+        
+        .features h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .features ul {
+            list-style: none;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .pricing {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .pricing h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .price-option {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .price-option strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+        
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #764ba2;
+        }
+        
+        .payment-methods {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .payment-methods h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-item {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .process {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .process h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        footer {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Professional Software Solutions</h1>
+            <p>Transform Your Business with Ready-to-Deploy Management Systems</p>
+        </header>
+        
+        <div class="contact-bar">
+            <h3>📞 Contact Us Today</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <span>Email:</span> mugishadavid910@gmail.com
+                </div>
+                <div class="contact-item">
+                    📱 <span>Phone:</span> 0796888684
+                </div>
+                <div class="contact-item">
+                    📍 <span>Location:</span> Kigali, Rwanda
+                </div>
+            </div>
+        </div>
+        
+        <div class="products">
+            <div class="product-card">
+                <span class="badge">⭐ Best Seller</span>
+                <h2>🚗 CWSMS</h2>
+                <p><strong>Car Washing Sales Management System</strong></p>
+                <p style="color: #666; margin: 10px 0;">Perfect for car wash businesses and auto service centers</p>
+                
+                <div class="features">
+                    <h3>✨ Key Features:</h3>
+                    <ul>
+                        <li>Complete car registration system</li>
+                        <li>Service package management</li>
+                        <li>Payment tracking & recording</li>
+                        <li>Daily sales reports</li>
+                        <li>Admin dashboard with live stats</li>
+                        <li>Mobile-responsive design</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing">
+                    <h3>💰 Pricing:</h3>
+                    <div class="price-option">
+                        <strong>Basic:</strong> 500,000 RWF
+                        <small>Installation + 1 month support</small>
+                    </div>
+                    <div class="price-option">
+                        <strong>Professional:</strong> 800,000 RWF
+                        <small>Customization + 3 months support + training</small>
+                    </div>
+                    <div class="price-option">
+                        <strong>Enterprise:</strong> 1,200,000 RWF
+                        <small>Multi-location + 6 months support</small>
+                    </div>
+                </div>
+                
+                <a href="mailto:mugishadavid910@gmail.com?subject=Interested%20in%20CWSMS" class="cta-button">
+                    📩 Order CWSMS Now
+                </a>
+            </div>
+            
+            <div class="product-card">
+                <span class="badge">🔥 Popular</span>
+                <h2>📦 SIMS</h2>
+                <p><strong>Stock Inventory Management System</strong></p>
+                <p style="color: #666; margin: 10px 0;">Perfect for retail shops, supermarkets, and wholesalers</p>
+                
+                <div class="features">
+                    <h3>✨ Key Features:</h3>
+                    <ul>
+                        <li>Product/spare parts management</li>
+                        <li>Stock-in (purchases) recording</li>
+                        <li>Stock-out (sales) management</li>
+                        <li>Automatic stock updates</li>
+                        <li>Low stock alerts</li>
+                        <li>PDF reports & export</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing">
+                    <h3>💰 Pricing:</h3>
+                    <div class="price-option">
+                        <strong>Basic:</strong> 600,000 RWF
+                        <small>Installation + 1 month support</small>
+                    </div>
+                    <div class="price-option">
+                        <strong>Professional:</strong> 900,000 RWF
+                        <small>Customization + 3 months support + training</small>
+                    </div>
+                    <div class="price-option">
+                        <strong>Enterprise:</strong> 1,500,000 RWF
+                        <small>Multi-branch + 6 months support + analytics</small>
+                    </div>
+                </div>
+                
+                <a href="mailto:mugishadavid910@gmail.com?subject=Interested%20in%20SIMS" class="cta-button">
+                    📩 Order SIMS Now
+                </a>
+            </div>
+        </div>
+        
+        <div class="payment-methods">
+            <h3>💳 Accepted Payment Methods</h3>
+            <div class="payment-icons">
+                <div class="payment-item">MTN Mobile Money</div>
+                <div class="payment-item">Airtel Money</div>
+                <div class="payment-item">Bank Transfer</div>
+                <div class="payment-item">Cash</div>
+            </div>
+            <p style="margin-top: 15px; color: #666;">📱 Mobile Money: 0796888684</p>
+        </div>
+        
+        <div class="process">
+            <h3>📋 How to Order</h3>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Contact us via<br>email or phone</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Free consultation<br>& package selection</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Make 50% deposit<br>to start work</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>System installation<br>& configuration</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <p>Training &<br>handover</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <p>Final payment &<br>ongoing support</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>🏆 <strong>Why Choose Us?</strong> Proven Systems • Local Support • Affordable Pricing • Quick ROI</p>
+            <p style="margin-top: 15px; color: #666;">© 2026 Professional Software Solutions - Rwanda. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
